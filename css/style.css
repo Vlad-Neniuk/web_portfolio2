@@ -28,7 +28,7 @@ body {
 
 body {
   /* background-color: rgb(34, 40, 49); */
-  background-color: rgb(0, 0, 0);
+  background-color: transparent;
 
   font-family: "Satoshi 400";
   font-size: 1.5rem;
@@ -273,6 +273,41 @@ main {
   justify-content: center;
   align-items: center;
 }
+
+main {
+  position: relative; /* Щоб псевдоелемент ::before працював коректно */
+  background-image: url('../img/sorso.jpg'); /* Фонове зображення */
+  background-size: cover; /* Зображення заповнює весь контейнер */
+  background-repeat: no-repeat; /* Заборонити повторення */
+  background-position: center; /* Вирівнювання зображення по центру */
+  width: 100%; /* Повна ширина */
+}
+
+main::before {
+  content: ""; /* Потрібно для псевдоелемента */
+  position: absolute; /* Накладення поверх фону */
+  top: 0;
+  left: 0;
+  width: 100%; /* Розтягування на весь контейнер */
+  height: 100%; /* Розтягування на всю висоту */
+
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.99), rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0) 70%);
+  z-index: 1; /* Щоб перекрити фон */
+}
+
+main > * {
+  position: relative; /* Весь контент main буде вище псевдоелемента */
+  z-index: 1; /* Забезпечує, що контент буде видимим */
+}
+
+
+  
+
+
+
+
+
+
 
 .name-highlight {
   background: -webkit-linear-gradient(
