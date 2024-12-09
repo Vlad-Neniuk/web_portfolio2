@@ -290,8 +290,8 @@ main::before {
   left: 0;
   width: 100%; /* Розтягування на весь контейнер */
   height: 100%; /* Розтягування на всю висоту */
+  background: linear-gradient(to right, rgba(0, 0, 0, 2), rgba(0, 0, 0, 0.8) 30%, rgba(0, 0, 0, 0) 50%);
 
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.99), rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0) 70%);
   z-index: 1; /* Щоб перекрити фон */
 }
 
@@ -1045,7 +1045,7 @@ footer span {
   }
 
   body > * {
-    width: 103rem;
+    width: 100%;
   }
 
   header,
